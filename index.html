@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="first-screen  d-flex justify-items-center align-items-center ">
+        <div class="sk-cube-grid ">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </div>
+
+    <section>
+        <div class="outer-side-nav">
+            <div class="nav-photo">
+                <img src="./10001.png" alt="">
+            </div>
+            <div class="push-button">
+                <i class="fa fa-align-justify d-flex"></i>
+                <i class="fa fa-align-justify fa-times d-none"></i>
+            </div>
+            <div class="social-icons ">
+                <div class="global ">
+                    <i class="fas fa-globe "></i>
+                </div>
+                <div class="share">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="inner-nav">
+            <div class="nav-item">
+                <ul>
+                    <li class="item1"><a data-list="search" class="nav-category">Search</a></li>
+                    <li class="item1"><a data-list="categories" class="nav-category">Categories</a></li>
+                    <li class="item2"><a data-list="a" class="nav-category">Area</a></li>
+                    <li class="item3"><a data-list="i" class="nav-category">Ingredients</a></li>
+                    <li class="item4"><a data-list="contact" class="nav-category">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-social-item">
+                <a><i class="fab fa-facebook-f"></i></a>
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fas fa-globe"></i></a>
+                <div class="pt-3">
+                    <span>Copyright Â© 2019 All Rights Reserved.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <div id="search-content" class="container w-75 search-input inputs position-fixed">
+
+        </div>
+        <section class="contianer text-center">
+            <div class="row gx-2" id="data-content">
+
+            </div>
+        </section>
+        <section>
+            <div class="container w-75 text-center my-1 py-2 mt-5 position-relative">
+                <div class="loading">
+                    <div class="sm-loading position-absolute ">
+                        <div class="lds-facebook"><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 gy-4 d-flex justify-content-center" id="data-place"></div>
+        </section>
+
+    </section>
+
+
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
