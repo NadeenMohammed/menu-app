@@ -32,7 +32,7 @@ var repasswordpressed = false
 $(document).ready(function () {
     $(".sk-cube-grid ").fadeOut(1000, function () {
         $(".first-screen").remove()
-        $("body").css("overflow-y", "auto")
+        $("body").css("overflow", "auto")
     })
 })
 
