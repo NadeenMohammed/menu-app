@@ -4,7 +4,7 @@ var navWidth = 0;
 var isTrue = !0;
 var list = [];
 var searchTrue = !0;
-var row = document.getElementById("data-place");
+var food = document.getElementById("data-place");
 
 var userName = document.getElementById("name")
 var userEmail = document.getElementById("email")
@@ -40,7 +40,7 @@ search("").then( function() {
     $(document).ready(function () {
         $(".sk-cube-grid ").fadeOut(1000, function () {
             $(".first-screen").remove()
-            $("body").css("overflow", "auto")
+            $("body").css("overflow ", "auto")
         })
     })
 })
@@ -48,18 +48,18 @@ $(".nav-item a").click(async function (e) {
     let listByMe = e.target.getAttribute("data-list")
 
     document.getElementById("search-content").innerHTML = ""
-    row.innerHTML = ""
+    food.innerHTML = ""
     $("html, body").animate({
         scrollTop: 0
     }, 200)
 
     if (listByMe == "contact") {
 
-        row.innerHTML = `
+        food.innerHTML = `
         <section id="contact" class="container search-input w-75 mx-auto mb-5 ">
 		<div class="p-2">
 			<h2 class="text-light mb-5">ContacUs...</h2>
-			<div class="row">
+			<div class="food">
 				<div class="col-md-6">
 					<div class="form-group">
 						<input class="form-control shadow " onkeyup="validation()" id="name"
@@ -154,9 +154,9 @@ $(".nav-item a").click(async function (e) {
         })
     }
     if (listByMe == "search") {
-        row.innerHTML = ""
+        food.innerHTML = ""
         document.getElementById("search-content").innerHTML = `
-        <div class="row">
+        <div class="food">
 				<div class="col-md-6"><input id="searchInput" class="form-control mb-2 " placeholder="Search By Name">
 				</div>
 				<div class="col-md-6">
@@ -289,7 +289,7 @@ function displayCategories() {
             </div>
         </div>
     </div>`
-    row.innerHTML = cartona
+    food.innerHTML = cartona
     $("html, body").animate({
         scrollTop: 0
     }, 200)
@@ -306,7 +306,7 @@ function displayArea() {
             </div>
         </div>
     </div>`
-    row.innerHTML = cartona
+    food.innerHTML = cartona
     $("html, body").animate({
         scrollTop: 0
     }, 200)
@@ -326,7 +326,7 @@ function displayIngredients() {
             </div>
         </div>
     </div>`
-    row.innerHTML = cartona
+    food.innerHTML = cartona
     $("html, body").animate({
         scrollTop: 0
     }, 200)
@@ -349,7 +349,7 @@ function displayMeals(list) {
             </div>
         </div>`
     }
-    row.innerHTML = meals
+    food.innerHTML = meals
     $("html, body").animate({
         scrollTop: 0
     }, 200)
@@ -391,7 +391,7 @@ function displayMeal(myMeal) {
 					<a class="btn btn-success text-white" target="_blank" href="${myMeal.strSource}">Source</a>
 					<a class="btn youtube text-white" target="_blank" href="${myMeal.strYoutube}">Youtub</a>
 				</div>`
-    row.innerHTML = strCartona
+    food.innerHTML = strCartona
     document.getElementById("recipes").innerHTML = cartona
     document.getElementById("tags").innerHTML = tagsStr
     $("html, body").animate({
