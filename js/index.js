@@ -1,7 +1,7 @@
 
 // -----VARIABLE
-var navWidth = 0;
-var isTrue = !0;
+var navbar = 0;
+var isOpen = !0;
 var list = [];
 var searchTrue = !0;
 var food = document.getElementById("data-place");
@@ -19,12 +19,12 @@ var userAgeAlert = document.getElementById("agealert")
 var userpasswordAlert = document.getElementById("passwordalert")
 var userRepasswordAlert = document.getElementById("repasswordalert")
 
-var namepressed = false
-var emailpressed = false
-var phonepressed = false
-var agepressed = false
-var passwordpressed = false
-var repasswordpressed = false
+var namepressed = 0
+var emailpressed = 0
+var phonepressed = 0
+var agepressed = 0
+var passwordpressed = 0
+var repasswordpressed = 0
 
 
 
@@ -45,7 +45,7 @@ search("").then( function() {
     })
 })
 $(".nav-item a").click(async function (e) {
-    let listByMe = e.target.getAttribute("data-list")
+    let listByMe = e.target.getAttribute("dataInfo")
 
     document.getElementById("search-content").innerHTML = ""
     food.innerHTML = ""
@@ -183,13 +183,13 @@ $(".nav-item a").click(async function (e) {
     let click_event = new CustomEvent('click');
     document.querySelector('.push-button').dispatchEvent(click_event);
 
-    let x;
+    let cate;
 
     if (listByMe == "categories") {
         $(".loading").fadeIn(100)
 
-        x = await getCategories(listByMe + ".php")
-        list = x.categories.splice(0, 20);
+        cate = await getCategories(listByMe + ".php")
+        list = cate.categories.splice(0, 20);
         displayCategories()
         $(".loading").fadeOut(500)
     } else if (listByMe == "a") {
@@ -202,8 +202,8 @@ $(".nav-item a").click(async function (e) {
     } else if (listByMe == "i") {
         $(".loading").fadeIn(100)
 
-        x = await getCategories("list.php?i=list")
-        list = x.meals.splice(0, 20);
+        cate = await getCategories("list.php?i=list")
+        list = cate.meals.splice(0, 20);
         displayIngredients()
         $(".loading").fadeOut(500)
     }
@@ -221,9 +221,9 @@ $(document).scroll(function () {
 })
 
 $(".outer-side-nav").click(function () {
-    isTrue ? ($(".inner-nav").addClass("open").removeClass("close"),
-        navWidth = $(".inner-nav").width() - 10,
-        $(".outer-side-nav").css("left", navWidth),
+    isOpen ? ($(".inner-nav").addClass("open").removeClass("close"),
+        navbar = $(".inner-nav").width() - 10,
+        $(".outer-side-nav").css("left", navbar),
         $(".d-none").toggleClass(".d-flex"),
         $(".inner-nav .item1").animate({
             opacity: "1",
@@ -244,13 +244,13 @@ $(".outer-side-nav").click(function () {
             opacity: "1",
             paddingTop: "25px"
         }, 2000),
-        isTrue = !isTrue) : ($(".inner-nav").addClass("close").removeClass("open"),
+        isOpen = !isOpen) : ($(".inner-nav").addClass("close").removeClass("open"),
             $(".d-flex").toggleClass(".d-none"),
             $(".outer-side-nav").css("left", 0),
             $(".inner-nav li").animate({
                 opacity: "0",
                 paddingTop: "500px"
-            }, 500), isTrue = !isTrue)
+            }, 500), isOpen = !isOpen)
 });
 
 $(".nav-search").click(function () {
@@ -418,9 +418,9 @@ async function getMeal(mealID) {
     $(".loading").fadeOut(500)
 }
 async function getCategories(listByMe) {
-    x = await fetch(`https://www.themealdb.com/api/json/v1/1/${listByMe}`);
-    x = await x.json()
-    return x;
+    cate = await fetch(`https://www.themealdb.com/api/json/v1/1/${listByMe}`);
+    cate = await cate.json()
+    return cate;
 
 }
 async function getByLetter(letters) {
