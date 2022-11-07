@@ -1,7 +1,7 @@
 
 // -----VARIABLE
 var navbar = 0;
-var isOpen = !0;
+var isOpen =!0;
 var list = [];
 var searchTrue = !0;
 var food = document.getElementById("data-place");
@@ -19,12 +19,12 @@ var userAgeAlert = document.getElementById("agealert")
 var userpasswordAlert = document.getElementById("passwordalert")
 var userRepasswordAlert = document.getElementById("repasswordalert")
 
-var namepressed = 0
-var emailpressed = 0
-var phonepressed = 0
-var agepressed = 0
-var passwordpressed = 0
-var repasswordpressed = 0
+var namepressed = 0;
+var emailpressed = 0;
+var phonepressed = 0;
+var agepressed = 0;
+var passwordpressed = 0;
+var repasswordpressed = 0;
 
 
 
